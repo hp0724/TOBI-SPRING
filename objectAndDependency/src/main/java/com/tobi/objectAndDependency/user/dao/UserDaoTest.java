@@ -4,13 +4,17 @@ import com.tobi.objectAndDependency.user.domain.User;
 import org.apache.catalina.core.ApplicationContext;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.sql.SQLException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+
 
 public class UserDaoTest {
 
@@ -21,6 +25,7 @@ public class UserDaoTest {
 
     @Before
     public void setUp() {
+        //ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
         this.dao = context.getBean("userDao",UserDao.class);
         this.user1 = new User("hp0724","황수하","springno1");

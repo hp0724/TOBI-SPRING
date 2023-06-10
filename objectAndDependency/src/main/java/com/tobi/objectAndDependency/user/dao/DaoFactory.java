@@ -19,10 +19,14 @@ public class DaoFactory {
         userDao.setConnectionMaker(connectionMaker());
         return userDao;
     }
-    @Bean
-    public ConnectionMaker connectionMaker() {
-        return new DconnectionMaker();
+
+
+    public ConnectionMaker
+    connectionMaker(){ // -------- id="connectionMaker"
+        return new DconnectionMaker(); // class = "springbook...DcoonectionMaker"/>
     }
+
+
 
 
 
